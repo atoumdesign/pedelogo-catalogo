@@ -12,7 +12,7 @@ pipeline {
     stage ('Docker Build'){
       steps {
         script {
-          dockerapp = docker.build("atoumdesign/pedelogo-catalogo:${env.BUILD_ID}", '-f ./src/Pe>
+          dockerapp = docker.build("atoumdesign/pedelogo-catalogo:${env.BUILD_ID}", '-f ./src/PedeLogo.Catalogo.Api/Dockerfile .')
         }
       }
     }
