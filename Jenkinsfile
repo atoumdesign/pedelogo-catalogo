@@ -16,7 +16,7 @@ pipeline {
         script {
           sh 'pwd'
           sh 'ls'
-          dockerapp = docker.build("atoumdesign/pedelogo-catalogo", '-f ./src/PedeLogo.Catalogo.Api/Dockerfile .')
+          dockerapp = docker.build("atoumdesign/pedelogo-catalogo", '-f src/PedeLogo.Catalogo.Api/Dockerfile .')
           sh 'echo "Hello World2"'
         }
       }
