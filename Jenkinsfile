@@ -16,7 +16,7 @@ pipeline {
         }
       }
     }
-
+/*
     stage ('Docker Push Image'){
       steps {
         script {
@@ -25,6 +25,6 @@ pipeline {
           dockerapp.push("${env.BUILD_ID}")
         }
       }
-    }
+    } */
   }
 }
