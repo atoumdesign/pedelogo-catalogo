@@ -10,13 +10,14 @@ pipeline {
         sh 'ls'
         echo("${env.BUILD_NUMBER}")
         echo("${a.LOADED_BUILD_NUMBER}")
-        sh 'docker'
+        
       }
     }
 
     stage ('Docker Build'){
       steps {
         script {
+          sh 'docker'
           sh 'pwd'
           sh 'ls'
           dockerapp = docker.build("atoumdesign/pedelogo-catalogo", '-f src/PedeLogo.Catalogo.Api/Dockerfile .')
