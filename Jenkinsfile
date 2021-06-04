@@ -8,6 +8,9 @@ pipeline {
         git url: 'https://github.com/atoumdesign/pedelogo-catalogo.git', branch: 'main'
         sh 'pwd'
         sh 'ls'
+        echo("${env.BUILD_NUMBER}")
+        echo("${a.LOADED_BUILD_NUMBER}")
+        sh 'docker'
       }
     }
 
@@ -17,7 +20,8 @@ pipeline {
           sh 'pwd'
           sh 'ls'
           dockerapp = docker.build("atoumdesign/pedelogo-catalogo", '-f src/PedeLogo.Catalogo.Api/Dockerfile .')
-          sh 'echo "Hello World2"'
+          echo("${env.BUILD_NUMBER}")
+          echo("${a.LOADED_BUILD_NUMBER}")
         }
       }
     }
