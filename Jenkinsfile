@@ -6,13 +6,16 @@ pipeline {
     stage ('Get Source'){
       steps {
         git url: 'https://github.com/atoumdesign/pedelogo-catalogo.git', branch: 'main'
+        sh 'pwd'
+        sh 'ls'
       }
     }
 
     stage ('Docker Build'){
       steps {
         script {
-          sh 'echo "Hello World"'
+          sh 'pwd'
+          sh 'ls'
           dockerapp = docker.build("atoumdesign/pedelogo-catalogo", '-f ./src/PedeLogo.Catalogo.Api/Dockerfile .')
           sh 'echo "Hello World2"'
         }
