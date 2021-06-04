@@ -21,12 +21,12 @@ pipeline {
           sh 'docker'
           sh 'pwd'
           sh 'ls'
-          dockerapp = docker.build("atoumdesign/pedelogo-catalogo", '-f ./src/PedeLogo.Catalogo.Api/Dockerfile .')
+          dockerapp = docker.build("atoumdesign/pedelogo-catalogo:${env.BUILD_ID}", '-f ./src/PedeLogo.Catalogo.Api/Dockerfile .')
 
         }
       }
     }
-/*
+
     stage ('Docker Push Image'){
       steps {
         script {
@@ -35,6 +35,6 @@ pipeline {
           dockerapp.push("${env.BUILD_ID}")
         }
       }
-    } */
+    } 
   }
 }
