@@ -11,6 +11,7 @@ pipeline {
         echo("BUILD_NUMBER=${env.BUILD_NUMBER}")
         echo("BUILD_ID=${env.BUILD_ID}")
         echo("LOADED_BUILD_NUMBER=${env.LOADED_BUILD_NUMBER}")
+        echo("TAG_NAME=${env.TAG_NAME}")
         
       }
     }
