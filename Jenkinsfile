@@ -9,7 +9,8 @@ pipeline {
         sh 'pwd'
         sh 'ls'
         echo("BUILD_NUMBER=${env.BUILD_NUMBER}")
-        echo("LOADED_BUILD_NUMBER=${a.LOADED_BUILD_NUMBER}")
+        echo("BUILD_ID=${env.BUILD_ID}")
+        echo("LOADED_BUILD_NUMBER=${env.LOADED_BUILD_NUMBER}")
         
       }
     }
@@ -21,8 +22,7 @@ pipeline {
           sh 'pwd'
           sh 'ls'
           dockerapp = docker.build("atoumdesign/pedelogo-catalogo", '-f src/PedeLogo.Catalogo.Api/Dockerfile .')
-          echo("${env.BUILD_NUMBER}")
-          echo("${a.LOADED_BUILD_NUMBER}")
+
         }
       }
     }
