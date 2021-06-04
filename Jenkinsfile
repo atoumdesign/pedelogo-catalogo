@@ -12,7 +12,9 @@ pipeline {
     stage ('Docker Build'){
       steps {
         script {
+          sh 'echo "Hello World"'
           dockerapp = docker.build("atoumdesign/pedelogo-catalogo", '-f ./src/PedeLogo.Catalogo.Api/Dockerfile .')
+          sh 'echo "Hello World2"'
         }
       }
     }
