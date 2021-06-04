@@ -8,8 +8,8 @@ pipeline {
         git url: 'https://github.com/atoumdesign/pedelogo-catalogo.git', branch: 'main'
         sh 'pwd'
         sh 'ls'
-        echo("${env.BUILD_NUMBER}")
-        echo("${a.LOADED_BUILD_NUMBER}")
+        echo("BUILD_NUMBER=${env.BUILD_NUMBER}")
+        echo("LOADED_BUILD_NUMBER=${a.LOADED_BUILD_NUMBER}")
         
       }
     }
