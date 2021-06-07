@@ -7,26 +7,26 @@ spec:
   selector:
     matchLabels:
       app: api
-    template:
-      metadata:
-        labels:
-          app: api
-      spec:
-        containers:
-        - name: api
-          image: atoumdesign/api-produto
-          ports:
-          - containerPort: 80
-          imagePullPolicy: Always
-          env:
-            - name: Mongo__User
-              value: mongouser
-            - name: Mongo__Password
-              value: mongopwd
-            - name: Mongo__Host
-              value: mongo-service
-            - name: Mongo__DataBase
-              value: admin
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: atoumdesign/pedelogo-catalogo
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+        env:
+          - name: Mongo__User
+            value: mongouser
+          - name: Mongo__Password
+            value: mongopwd
+          - name: Mongo__Host
+            value: mongo-service
+          - name: Mongo__DataBase
+            value: admin
 
 ---
 # api-service.yml
@@ -41,4 +41,3 @@ spec:
   - port: 80
     targetPort: 80
   type: LoadBalancer
-
