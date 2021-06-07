@@ -20,9 +20,9 @@ spec:
         resources: {}
         env:
           - name: MONGO_INITDB_ROOT_USERNAME
-            values: mongouser
+            value: mongouser
           - name: MONGO_INITDB_ROOT_PASSWORD
-            values: mongopwd
+            value: mongopwd
 
 ---
 # mongodb-service.yml
